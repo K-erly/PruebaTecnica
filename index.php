@@ -2,7 +2,7 @@
 //Creación de base de datos
 require 'config/conexionDB.php';
 require 'config/createTable.php';
-date_default_timezone_set('America/Bogota');
+
 session_start();
 
 

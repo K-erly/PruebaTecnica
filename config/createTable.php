@@ -15,5 +15,5 @@ $sql = "CREATE TABLE IF NOT EXISTS jornadas (
 
 $db->exec($sql);
 
-
+//Version 2.0
 ?>

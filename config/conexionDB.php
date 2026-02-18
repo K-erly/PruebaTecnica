@@ -2,6 +2,7 @@
 //Conexión a la base de datos SQLite
 //Si no existe la base de datos, se crea automáticamente
 //PHP Data Objects (PDO).
+date_default_timezone_set('America/Bogota'); //definir la zona horaria
 $dbPath = __DIR__ . '/../database/database.sqlite';
 
  try{

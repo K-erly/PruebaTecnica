@@ -1,6 +1,6 @@
 <?php
    require 'config/conexionDB.php';
-   date_default_timezone_set('America/Bogota');
+
    session_start();
 
    //Verifica sesión
@@ -18,7 +18,7 @@
     $jornadaActiva = $jornada->fetch(PDO::FETCH_ASSOC);
     
     if($jornadaActiva){
-        echo("Hay jornada activa");
+        echo("Hay jornada activa version 2.0");
     }else{
         echo("No hay jornada activa");
         exit();
@@ -45,4 +45,5 @@
         <button type="submit">Cerrar Jornada</button>
     </form>
     </div>
+
 </body>
