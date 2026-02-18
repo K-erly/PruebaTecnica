@@ -1,0 +1,128 @@
+/*Paleta de colores
+Acción/ primario #1B4965
+Secundario / Botones #5FA8D3
+Texto / Títulos #333333
+Fondos Secundarios #E9ECEF
+Detalles / Bordes #CAE9FF
+Fondo Base #FFFFFF
+*/
+
+body{
+    background-color: #FFFFFF;
+    padding: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*Pantalla login*/
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.container{
+    background-color: #E9ECEF;
+    padding: 60px;
+    border-radius: 20px;
+    align-items: center;
+    box-shadow: 0 0 10px #000000;
+    /*Alinear elementos centrados en columna*/
+    display: flex; 
+    flex-direction: column;
+
+}
+
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #5FA8D3;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;/*Efectos para el button*/
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #1B4965;
+}
+
+.btn:active{
+    transform: translateY(1px);
+}
+
+/*Pantalla Usuarios*/
+.container-crud {
+    display: flex;
+    gap: 30px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+/*Formulario*/
+.container-form{
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 350px;
+}
+
+.container-form input{
+    width: 80%;
+    padding: 10px;
+    margin: 10px 10px;
+}
+
+.container-form button{
+   width: 85%;
+   margin: 10px 10px;
+
+}
+
+.btn-cancelar{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1B4965;
+    border-radius: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;/*Efectos para el button*/
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancelar:hover{
+    background-color: #5FA8D3;
+}
+
+.btn-cancelar:active{
+    transform: translateY(1px);
+}
+
+/*Tabla*/
+.tabla{
+    width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px #000000;
+    border-collapse: collapse;
+}
+
+.tabla th{
+    background-color: #5FA8D3;
+}
+
+.tabla th, .tabla td{
+    border: 1px solid #333333;
+    padding: 10px;
+}
+
+
