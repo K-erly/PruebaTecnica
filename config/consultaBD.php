@@ -10,5 +10,5 @@ echo "</pre>";
 
 echo "Timezone actual: " . date_default_timezone_get() . "<br>";
 echo "Hora actual PHP: " . date("Y-m-d H:i:s") . "<br>";
-echo "Hora local que ves en tu PC: (escríbemela tú)";
+
 ?>
