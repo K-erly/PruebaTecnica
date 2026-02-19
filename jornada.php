@@ -24,6 +24,29 @@
         exit();
     }
 
+    if(isset($_POST['cerrarJornada'])){
+       
+        $horaSalida=date("Y-m-d H:i:s");
+
+        //Convertir datos a datetime para el calculo de horas
+        $auxHoraEntrada= new DateTime($jornadaActiva['hora_entrada']);
+        $auxHoraSalida= new DateTime($horaSalida);
+    
+        //Calcular total de horas
+        $tiempoTotal = $auxHoraEntrada->diff($auxHoraSalida);
+        // echo("  variables entrada". $horaSalida. " ---- salida --".$jornadaActiva['hora_entrada']."-----".$tiempoTotal->format('%H:%I:%S'));
+
+        //Convertir a String
+        $salida =  $auxHoraSalida->format("Y-m-d H:i:s");
+        $total = $tiempoTotal->format("%H:%I:%S"); 
+        $conteoFinal = $db->prepare("UPDATE jornadas SET hora_salida = ?, tiempo_total = ? WHERE codigo_trabajador = ? AND hora_salida IS NULL");
+        $conteoFinal->execute([$salida, $total, $codigo]);
+
+        session_destroy();
+        header("Location: index.php");
+        exit;
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -40,9 +63,10 @@
     <p>Ingreso: <?php echo ($jornadaActiva['hora_entrada']); ?></p>
     
     <h1 id="cronometro">00:00:00</h1>
-
-    <button class="btn" id="cerrarJornada">Cerrar Jornada</button>
-    
+    <form method="POST">
+        <button class="btn" name="cerrarJornada">Cerrar Jornada</button>
+        
+    </form>
     </div>
 
     <script type="text/javascript" >
@@ -81,7 +105,7 @@
         tiempoSegundos=tiempoSegundos.toString().padStart(2, "0");
         
     
-    //     console.log("hora entrada"+horaEntrada+ "separada "+ h+":"+m+":"+s+" hora actual "+horaActual +" separada "+hora+":"+minutos+":"+segundos);
+    // console.log("hora entrada"+horaEntrada+ "separada "+ h+":"+m+":"+s+" hora actual "+horaActual +" separada "+hora+":"+minutos+":"+segundos);
     // console.log(totalHoras+" "+tiempoHoras+":"+tiempoMinutos+":"+tiempoSegundos);
         document.getElementById("cronometro").textContent = `${tiempoHoras}:${tiempoMinutos}:${tiempoSegundos}`;   
     }

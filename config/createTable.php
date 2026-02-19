@@ -10,7 +10,7 @@ $sql = "CREATE TABLE IF NOT EXISTS jornadas (
         codigo_trabajador INTEGER NOT NULL,
         hora_entrada DATETIME NOT NULL, 
         hora_salida DATETIME,
-        tiempo_total INTEGER
+        tiempo_total TEXT
         )";
 
 $db->exec($sql);
